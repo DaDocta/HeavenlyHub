@@ -1,0 +1,128 @@
+/* General Layout */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  color: white;
+  min-height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.home p {
+  text-align: center;
+  color: #9fc3ff; /* Subtle light blue for celestial theme */
+  font-weight: bold;
+  line-height: 1.2;
+  text-shadow: 0 0 10px #9fc3ff, 0 0 20px #628cff, 0 0 30px #5074d1; /* Soft glow */
+  margin: 0 0 20px 0; /* Space below the title */
+}
+
+/* Navigation Controls */
+.navigation-controls {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align vertically */
+  gap: 10px;
+}
+
+/* Text Input */
+input[type="text"] {
+  font-size: inherit; /* Set by media queries */
+  color: white;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Dark, translucent background */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+  outline: none;
+  width: 100%; /* Full width for controls in portrait */
+  max-width: 250px; /* Uniform width for landscape */
+}
+
+/* Dropdown Menu */
+select {
+  font-size: inherit; /* Set by media queries */
+  color: white;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Dark, translucent background */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+  outline: none;
+  cursor: pointer;
+  width: 100%; /* Full width for controls in portrait */
+  max-width: 150px; /* Uniform width for landscape */
+}
+
+/* Button Styling */
+button {
+  font-size: inherit; /* Set by media queries */
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  background: linear-gradient(145deg, #3b7cfa, #5c9aff);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(59, 124, 250, 0.8); /* Radiant glow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%; /* Full width for controls in portrait */
+  max-width: 250px; /* Uniform width for landscape */
+}
+
+/* Button Hover Effect */
+button:hover {
+  background: linear-gradient(145deg, #2a5db8, #4a7bd1);
+  box-shadow: 0 0 30px rgba(59, 124, 250, 1); /* Brighter hover effect */
+}
+
+/* Error Message Styling */
+.error-message {
+  font-size: 1.2em;
+  color: #ff8c8c; /* Subtle red for errors */
+  text-shadow: 0 0 10px #ff8c8c, 0 0 20px #ffcccc;
+  text-align: center;
+  margin-top: 10px; /* Minimal spacing above the error message */
+}
+
+/* Portrait Mode */
+@media (orientation: portrait) {
+  .home p {
+    font-size: 7vw; /* Adjust title size for portrait mode */
+  }
+
+  input[type="text"],
+  select,
+  button {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    width: 100%; /* Make all elements equal in width */
+    max-width: 300px; /* Same max-width for consistency */
+  }
+
+  .navigation-controls {
+    flex-direction: column; /* Stack controls vertically */
+    gap: 15px; /* More spacing between stacked elements */
+  }
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) {
+  .home p {
+    font-size: 4vw; /* Adjust title size for landscape mode */
+  }
+
+  input[type="text"],
+  select,
+  button {
+    font-size: 1.5rem; /* Larger font size for landscape */
+  }
+
+  .navigation-controls {
+    flex-direction: row; /* Align elements horizontally */
+    gap: 15px; /* Space between controls in landscape */
+  }
+}
