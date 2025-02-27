@@ -19,12 +19,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      calc(
-        -1 * (var(--carousel-slide-width) + var(--carousel-spacing, 10px) * 2)
-        * var(--carousel-item-count)
-      )
-    );
+    transform: translateX(var(--loop-distance)); /* Dynamically set */
   }
 }
 
@@ -32,51 +27,35 @@
   animation-direction: reverse;
 }
 
-/* Each slide */
+/* Each slide remains the same */
 .carousel-slide {
-  flex: 0 0 var(--carousel-slide-width);
+  flex: 0 0 var(--carousel-slide-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 var(--carousel-spacing, 10px);
+  padding: 0 var(--carousel-spacing);
   box-sizing: content-box;
 }
 
-/* Fixed-size box for each item */
+/* 🔹 Ensures all images are the same size */
 .carousel-box {
-  width: var(--carousel-slide-size, 200px);
-  height: var(--carousel-slide-size, 200px);
+  width: var(--carousel-slide-size);
+  height: var(--carousel-slide-size);
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-  position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.1); /* Optional subtle background behind image */
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* The fill-link is a block that covers the entire box
-   and uses background-size: cover to fill the box while preserving aspect ratio */
-.fill-link {
-  display: block;
+/* 🔹 Ensures images maintain proportions */
+.carousel-box img {
   width: 100%;
   height: 100%;
-  text-decoration: none; /* So it's clickable without underlines */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; /* Key: fill box, preserving aspect ratio */
-  transition: background-size 0.3s ease;
+  object-fit: cover; /* Maintains aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Optional hover "zoom" effect on the background */
-
-
-/* Responsive adjustments for portrait */
-@media (max-width: 768px) {
-  .carousel-wrapper {
-    width: 80vw;
-  }
-  
-  .carousel-box {
-    width: 150px;
-    height: 150px;
-  }
+.carousel-box img:hover {
+  transform: scale(1.05);
 }

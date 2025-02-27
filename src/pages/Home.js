@@ -9,21 +9,21 @@ const Home = () => {
   const [data, setData] = useState({});
   const categories = ['books', 'artists', 'celebrities', 'ministries', 'podcasts'];
 
-  // 1) Store a "carouselWidth" state that changes by screen size
-  const [carouselWidth, setCarouselWidth] = useState(
-    window.matchMedia('(max-width: 768px)').matches ? '80vw' : '50vw'
-  );
+  const [carouselSettings, setCarouselSettings] = useState({
+    width: '50vw',
+    slideSize: '200px',
+  });
 
   useEffect(() => {
-    // Listen for screen size/orientation changes to update the width
     const handleResize = () => {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        setCarouselWidth('80vw');  // Portrait
+      if (window.innerWidth < 768) {
+        setCarouselSettings({ width: '80vw', slideSize: '100px' });
       } else {
-        setCarouselWidth('50vw');  // Landscape
+        setCarouselSettings({ width: '45vw', slideSize: '200px' });
       }
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
     window.addEventListener('orientationchange', handleResize);
 
@@ -33,7 +33,6 @@ const Home = () => {
     };
   }, []);
 
-  // 2) Fetch data
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -46,7 +45,6 @@ const Home = () => {
     loadData();
   }, []);
 
-  // 3) Render your categories + Carousel
   return (
     <div className="home">
       <header className="star-header">
@@ -62,8 +60,11 @@ const Home = () => {
               </h2>
               <Carousel
                 items={data[cat]}
-                reverse={index % 2 !== 0} // Alternate direction
-                width={carouselWidth}     // <-- pass the dynamic width here
+                reverse={index % 2 !== 0}
+                width={carouselSettings.width}
+                slideSize={carouselSettings.slideSize} /* 🔹 Now dynamically adjusts */
+                spacing="10px"
+                scrollSpeed="10s"
               />
             </div>
           ) : null
