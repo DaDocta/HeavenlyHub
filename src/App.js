@@ -1,37 +1,36 @@
+// src/App.js
 import React, { useRef } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
-import Edit from './pages/Edit';
-import Everything from './pages/Everything';
+import BackgroundVideo from './components/BackgroundVideo';
+import NavBar from './components/Navbar';
+import Give from './pages/Give';
+import Share from './pages/Share';
 import { AuthProvider, AuthContext } from './AuthContext';
 import './styles/App.css';
 
-const App = () => {
+function App() {
   const location = useLocation();
   const nodeRef = useRef(null);
 
   return (
     <AuthProvider>
       <div className="page-content" ref={nodeRef}>
+        <NavBar />
+        <BackgroundVideo />
+
         <AuthContext.Consumer>
           {({ isAuthenticated }) => (
             <Routes location={location}>
-              {/* Home */}
               <Route path="/" element={<Home />} />
-              {/* Portfolio */}
-              <Route path="/portfolio/:name" element={<Portfolio />} />
-              {/* Edit */}
-              {/* Global edit page */}
-              <Route path="/edit" element={<Edit />} />
-              {/* Edit specific profile */}
-              <Route path="/edit/:name" element={<Edit />} />
-              {/* Everything */}
-              <Route path="/everything/:name" element={<Everything />} />
-              {/* Authentication-protected route */}
+              <Route path="/give" element={<Give />} />
+              <Route path="/share" element={<Share />} />
+              {/* Just an example of other routes if you want them */}
               <Route
                 path="/protected"
-                element={isAuthenticated ? <Navigate to="/" replace /> : <Navigate to="/login" />}
+                element={
+                  isAuthenticated ? <Navigate to="/" replace /> : <Navigate to="/login" />
+                }
               />
             </Routes>
           )}
@@ -39,6 +38,6 @@ const App = () => {
       </div>
     </AuthProvider>
   );
-};
+}
 
 export default App;

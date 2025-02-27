@@ -1,0 +1,82 @@
+.carousel-wrapper {
+  width: var(--carousel-width, 50vw);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll var(--carousel-scroll-speed, 10s) linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(
+        -1 * (var(--carousel-slide-width) + var(--carousel-spacing, 10px) * 2)
+        * var(--carousel-item-count)
+      )
+    );
+  }
+}
+
+.carousel-track.reverse {
+  animation-direction: reverse;
+}
+
+/* Each slide */
+.carousel-slide {
+  flex: 0 0 var(--carousel-slide-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--carousel-spacing, 10px);
+  box-sizing: content-box;
+}
+
+/* Fixed-size box for each item */
+.carousel-box {
+  width: var(--carousel-slide-size, 200px);
+  height: var(--carousel-slide-size, 200px);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1); /* Optional subtle background behind image */
+}
+
+/* The fill-link is a block that covers the entire box
+   and uses background-size: cover to fill the box while preserving aspect ratio */
+.fill-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* So it's clickable without underlines */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Key: fill box, preserving aspect ratio */
+  transition: background-size 0.3s ease;
+}
+
+/* Optional hover "zoom" effect on the background */
+
+
+/* Responsive adjustments for portrait */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    width: 80vw;
+  }
+  
+  .carousel-box {
+    width: 150px;
+    height: 150px;
+  }
+}

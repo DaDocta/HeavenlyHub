@@ -1,7 +1,7 @@
 {
-  "name": "starchart",
+  "name": "heavenlyhub",
   "version": "0.1.0",
-  "homepage": "https://starchart.site",
+  "homepage": "https://heavenlyhub.org",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -40,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

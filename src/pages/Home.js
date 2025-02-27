@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fetchData from '../utils/fetchData';
+import Carousel from '../components/Carousel';
 import '../styles/Home.css';
 
 const baseApiUrl = 'https://heavenlyhub-333358093861.us-central1.run.app';
@@ -8,10 +9,34 @@ const Home = () => {
   const [data, setData] = useState({});
   const categories = ['books', 'artists', 'celebrities', 'ministries', 'podcasts'];
 
+  // 1) Store a "carouselWidth" state that changes by screen size
+  const [carouselWidth, setCarouselWidth] = useState(
+    window.matchMedia('(max-width: 768px)').matches ? '80vw' : '50vw'
+  );
+
+  useEffect(() => {
+    // Listen for screen size/orientation changes to update the width
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        setCarouselWidth('80vw');  // Portrait
+      } else {
+        setCarouselWidth('50vw');  // Landscape
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, []);
+
+  // 2) Fetch data
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Fetch main.json
         const jsonData = await fetchData(`${baseApiUrl}/getFile?fileName=main.json`);
         setData(jsonData);
       } catch (err) {
@@ -21,36 +46,27 @@ const Home = () => {
     loadData();
   }, []);
 
-  const renderCarousel = (items, category) => {
-    // Optional: Add next/prev logic or styling
-    return (
-      <div className="carousel-section">
-        <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-        <div className="carousel-container">
-          {items?.map((item, index) => (
-            <div key={index} className="carousel-item">
-              <img src={item.image} alt={item.name} />
-              <h3>{item.name}</h3>
-              {item.author && <p>Author: {item.author}</p>}
-              {item.host && <p>Host: {item.host}</p>}
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
+  // 3) Render your categories + Carousel
   return (
     <div className="home">
-      <header>
-        <h1>Heavenly Hub</h1>
-        <p>Discover resources across multiple faith-based categories.</p>
+      <header className="star-header">
+        <p className="title">Find God Anywhere!</p>
       </header>
 
       <main>
-        {categories.map((category) =>
-          data[category] ? renderCarousel(data[category], category) : null
+        {categories.map((cat, index) =>
+          data[cat] ? (
+            <div key={cat} className="category-section">
+              <h2 className="category-title">
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </h2>
+              <Carousel
+                items={data[cat]}
+                reverse={index % 2 !== 0} // Alternate direction
+                width={carouselWidth}     // <-- pass the dynamic width here
+              />
+            </div>
+          ) : null
         )}
       </main>
     </div>

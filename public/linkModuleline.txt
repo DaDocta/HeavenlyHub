@@ -1,0 +1,3 @@
+rmdir /s /q node_modules
+mklink /D node_modules "D:\Garrett Strange\Software\Coding\Snippets\node_modules"
+npm install --prefix "D:\Garrett Strange\Software\Coding\Snippets" react

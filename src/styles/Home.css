@@ -1,128 +1,61 @@
-/* General Layout */
 .home {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Start from top */
+}
+
+/* Header styling */
+.title {
   color: white;
-  min-height: 100vh;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-/* Header Styling */
-.home p {
   text-align: center;
-  color: #9fc3ff; /* Subtle light blue for celestial theme */
-  font-weight: bold;
-  line-height: 1.2;
-  text-shadow: 0 0 10px #9fc3ff, 0 0 20px #628cff, 0 0 30px #5074d1; /* Soft glow */
-  margin: 0 0 20px 0; /* Space below the title */
+  font-weight: bolder;
 }
 
-/* Navigation Controls */
-.navigation-controls {
+/* Main content area */
+main {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Align vertically */
-  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 3rem; /* or more, if you like */
 }
 
-/* Text Input */
-input[type="text"] {
-  font-size: inherit; /* Set by media queries */
-  color: white;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7); /* Dark, translucent background */
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
-  outline: none;
-  width: 100%; /* Full width for controls in portrait */
-  max-width: 250px; /* Uniform width for landscape */
-}
-
-/* Dropdown Menu */
-select {
-  font-size: inherit; /* Set by media queries */
-  color: white;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7); /* Dark, translucent background */
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
-  outline: none;
-  cursor: pointer;
-  width: 100%; /* Full width for controls in portrait */
-  max-width: 150px; /* Uniform width for landscape */
-}
-
-/* Button Styling */
-button {
-  font-size: inherit; /* Set by media queries */
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 10px;
-  background: linear-gradient(145deg, #3b7cfa, #5c9aff);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(59, 124, 250, 0.8); /* Radiant glow */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%; /* Full width for controls in portrait */
-  max-width: 250px; /* Uniform width for landscape */
-}
-
-/* Button Hover Effect */
-button:hover {
-  background: linear-gradient(145deg, #2a5db8, #4a7bd1);
-  box-shadow: 0 0 30px rgba(59, 124, 250, 1); /* Brighter hover effect */
-}
-
-/* Error Message Styling */
-.error-message {
-  font-size: 1.2em;
-  color: #ff8c8c; /* Subtle red for errors */
-  text-shadow: 0 0 10px #ff8c8c, 0 0 20px #ffcccc;
+.category-section {
   text-align: center;
-  margin-top: 10px; /* Minimal spacing above the error message */
 }
 
-/* Portrait Mode */
+/* Category title */
+.category-title {
+  font-weight: bold;
+  margin-bottom: 1rem; /* Space between title and carousel */
+  text-transform: capitalize;
+  color: white; /* Ensure visibility */
+}
+
 @media (orientation: portrait) {
-  .home p {
-    font-size: 7vw; /* Adjust title size for portrait mode */
+  .title {
+    font-size: 8vw;
+    margin: 8vw 0;
   }
-
-  input[type="text"],
-  select,
-  button {
-    font-size: 1.2rem; /* Slightly larger text for readability */
-    width: 100%; /* Make all elements equal in width */
-    max-width: 300px; /* Same max-width for consistency */
+  .category-title {
+    font-size: 6vw;
   }
-
-  .navigation-controls {
-    flex-direction: column; /* Stack controls vertically */
-    gap: 15px; /* More spacing between stacked elements */
+  main {
+    gap: 5vw; /* Bigger vertical gap between categories */
   }
 }
 
-/* Landscape Mode */
 @media (orientation: landscape) {
-  .home p {
-    font-size: 4vw; /* Adjust title size for landscape mode */
+  .title {
+    font-size: 5vw;
+    margin: 2vw 0;
   }
-
-  input[type="text"],
-  select,
-  button {
-    font-size: 1.5rem; /* Larger font size for landscape */
+  .category-title {
+    font-size: 3vw;
   }
-
-  .navigation-controls {
-    flex-direction: row; /* Align elements horizontally */
-    gap: 15px; /* Space between controls in landscape */
+  main {
+    gap: 5vw; /* Bigger vertical gap between categories */
   }
 }

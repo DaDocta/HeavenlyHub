@@ -1,0 +1,139 @@
+{
+    "books": [
+      {
+        "name": "Mere Christianity",
+        "author": "C.S. Lewis",
+        "link": "https://www.cslewis.com/us/books/hardcover/mere-christianity/9780060652883/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/MereChristianity.jpg",
+        "genre": "Nonfiction",
+        "description": "C.S. Lewis's classic work on Christian theology.",
+        "tags": ["theology", "faith", "philosophy"]
+      },
+      {
+        "name": "The Pilgrim's Progress",
+        "author": "John Bunyan",
+        "link": "https://en.wikipedia.org/wiki/The_Pilgrim%27s_Progress",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/PilgrimsProgress.jpg",
+        "genre": "Fiction",
+        "description": "An allegorical journey of faith and redemption.",
+        "tags": ["allegory", "faith", "classic"]
+      },
+      {
+        "name": "The Purpose Driven Life",
+        "author": "Rick Warren",
+        "link": "https://www.purposedriven.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/PurposeDrivenLife.jpg",
+        "genre": "Nonfiction",
+        "description": "A guide to living a life of purpose and faith.",
+        "tags": ["purpose", "faith", "inspiration"]
+      }
+    ],
+    "artists": [
+      {
+        "name": "Chris Tomlin",
+        "link": "https://www.christomlin.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/ChrisTomlin.jpg",
+        "genre": "Contemporary Worship",
+        "description": "Known for worship hits like 'How Great Is Our God'.",
+        "tags": ["worship", "faith", "music"]
+      },
+      {
+        "name": "Lauren Daigle",
+        "link": "https://www.laurendaigle.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/LaurenDaigle.jpg",
+        "genre": "Contemporary Christian",
+        "description": "Grammy-winning artist with powerful songs like 'You Say'.",
+        "tags": ["faith", "music", "inspiration"]
+      },
+      {
+        "name": "Hillsong United",
+        "link": "https://hillsong.com/united/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/HillsongUnited.jpg",
+        "genre": "Worship Band",
+        "description": "Famous for songs like 'Oceans (Where Feet May Fail)'.",
+        "tags": ["worship", "band", "faith"]
+      }
+    ],
+    "celebrities": [
+      {
+        "name": "Kirk Cameron",
+        "link": "https://www.kirkcameron.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/KirkCameron.jpg",
+        "genre": "Christian Media",
+        "description": "Actor in films like 'Fireproof' and 'Left Behind'.",
+        "tags": ["movies", "faith", "family"]
+      },
+      {
+        "name": "Tim Tebow",
+        "link": "https://timtebow.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/TimTebow.jpg",
+        "genre": "Athlete",
+        "description": "Former NFL player known for his strong Christian faith.",
+        "tags": ["sports", "faith", "inspiration"]
+      },
+      {
+        "name": "Candace Cameron Bure",
+        "link": "https://candacecbure.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/CandaceCameronBure.jpg",
+        "genre": "Actress",
+        "description": "Known for faith-driven roles and advocacy.",
+        "tags": ["faith", "TV", "family"]
+      }
+    ],
+    "ministries": [
+      {
+        "name": "Billy Graham Evangelistic Association",
+        "link": "https://billygraham.org/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/BillyGrahamEvangelisticAssociation.jpg",
+        "genre": "Evangelism",
+        "description": "Spreading the Gospel worldwide through events and resources.",
+        "tags": ["evangelism", "faith", "global"]
+      },
+      {
+        "name": "Compassion International",
+        "link": "https://www.compassion.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/CompassionInternational.jpg",
+        "genre": "Child Sponsorship",
+        "description": "Helping children in poverty through Christ-centered programs.",
+        "tags": ["charity", "faith", "children"]
+      },
+      {
+        "name": "Focus on the Family",
+        "link": "https://www.focusonthefamily.com/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/FocusOnTheFamily.jpg",
+        "genre": "Family Ministry",
+        "description": "Providing resources for strengthening families.",
+        "tags": ["family", "faith", "resources"]
+      }
+    ],
+    "podcasts": [
+      {
+        "name": "The Bible Project Podcast",
+        "host": "Tim Mackie and Jon Collins",
+        "link": "https://bibleproject.com/podcasts/the-bible-project-podcast/",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/TheBibleProjectPodcast.jpg",
+        "genre": "Biblical Studies",
+        "description": "Exploring the Bible's themes and stories.",
+        "tags": ["Bible", "study", "faith"]
+      },
+      {
+        "name": "The Happy Hour",
+        "host": "Jamie Ivey",
+        "link": "https://www.jamieivey.com/podcast",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/TheHappyHour.jpg",
+        "genre": "Christian Living",
+        "description": "Encouraging conversations with Christian guests.",
+        "tags": ["faith", "life", "inspiration"]
+      },
+      {
+        "name": "Ask Pastor John",
+        "host": "John Piper",
+        "link": "https://www.desiringgod.org/ask-pastor-john",
+        "image": "https://storage.googleapis.com/heavenlyhub/images/example.jpg",
+        "genre": "Theology",
+        "description": "Answering theological and practical questions about faith.",
+        "tags": ["theology", "faith", "questions"]
+      }
+    ]
+}
+  

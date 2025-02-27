@@ -1,0 +1,67 @@
+/* Main Navbar Styles */
+.navbar {
+  background: none;
+  padding: 1rem 2rem; /* Adds inside spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.navbar-left .logo {
+  font-family: 'Pacifico', cursive; /* Use your preferred cursive font */
+  font-size: 2rem;
+  color: white;
+  text-decoration: none; /* No underline */
+}
+
+/* Navbar Right Side - List styling */
+.navbar-right ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right ul li {
+  margin: 0 1rem;
+}
+
+/* Link styling for both Link and <a> tags */
+.navbar-right a,
+.navbar-right a:visited,
+.navbar-right a:link,
+.navbar-right a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Portrait Mode: Scale Icons */
+@media (orientation: portrait) {
+  .navbar-right ul li svg {
+    font-size: 4vw; /* Adjust icon size for smaller screens */
+  }
+  .navbar-right ul li {
+    margin: 0 3vw;
+  }
+  .navbar-left .logo {
+    font-size: 6vw;
+  }
+}
+
+/* Landscape Mode: Scale Text */
+@media (orientation: landscape) {
+  .navbar-right a {
+    font-size: 2vw !important;
+  }
+  .navbar-right ul li {
+    margin: 0 2vw;
+  }
+  .navbar-left .logo {
+    font-size: 3vw;
+  }
+}
