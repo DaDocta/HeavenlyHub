@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import { FaHome, FaInfoCircle, FaHandHoldingHeart, FaShareAlt } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaHandHoldingHeart } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
@@ -35,14 +35,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <Link to="/give">
+            <a 
+              href="https://samaritanspurse.org/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               {isPortrait ? <FaHandHoldingHeart /> : 'Give'}
-            </Link>
-          </li>
-          <li>
-            <Link to="/share">
-              {isPortrait ? <FaShareAlt /> : 'Share'}
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
